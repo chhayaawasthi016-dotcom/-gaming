@@ -111,4 +111,32 @@
   });
 </script>
 
+<div class="carousel">
+  <div class="slide active"><img src="game1.jpg" alt="Game 1"></div>
+  <div class="slide"><img src="game2.jpg" alt="Game 2"></div>
+  <div class="slide"><img src="game3.jpg" alt="Game 3"></div>
+</div>
+
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === i);
+    });
+  }
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 3000); // change every 3 seconds
+</script>
+
+<style>
+  .carousel { position: relative; width: 100%; max-width: 600px; margin: auto; }
+  .slide { display: none; }
+  .slide.active { display: block; }
+  .slide img { width: 100%; border-radius: 8px; }
+</style>
 
