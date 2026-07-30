@@ -270,4 +270,7 @@ body.light .game-card {
   background: #eee;
   color: #0d0d0d;
 }
- 
+ document.getElementById('themeToggle').addEventListener('click', () => {
+  document.body.classList.toggle('light');
+});
+
