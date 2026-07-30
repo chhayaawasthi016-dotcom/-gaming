@@ -97,3 +97,18 @@
   </footer>
 </body>
 </html>
+<input type="text" id="search" placeholder="Search games...">
+
+<script>
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('keyup', function() {
+    let filter = searchInput.value.toLowerCase();
+    let cards = document.querySelectorAll('.game-card');
+    cards.forEach(card => {
+      let title = card.querySelector('h3').textContent.toLowerCase();
+      card.style.display = title.includes(filter) ? '' : 'none';
+    });
+  });
+</script>
+
+
