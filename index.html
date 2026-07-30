@@ -240,5 +240,16 @@
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+// Reviews
+document.getElementById('reviewForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let name = document.getElementById('username').value;
+  let text = document.getElementById('reviewText').value;
+  let div = document.createElement('div');
+  div.innerHTML = `<strong>${name}:</strong> ${text}`;
+  div.style.animation = "fadeIn 0.5s ease-in";
+  document.getElementById('reviewsList').appendChild(div);
+  this.reset();
+});
 
     
